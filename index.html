@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Snake</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="start-screen" class="overlay">
+        <div class="start-screen-content">
+            <h1>Snake</h1>
+            
+            <div class="game-instructions">
+                <h2>Game Guide</h2>
+                <ul>
+                    <li>🕹️ Navigate with Arrow Keys</li>
+                    <li>🍎 Collect Food to Grow</li>
+                    <li>⚡ Special Power-Ups Appear Randomly</li>
+                    <li>⏸️ Pause Anytime with SPACE</li>
+                </ul>
+            </div>
+
+            <div class="game-options">
+                <div class="mode-selection">
+                    <h3>Game Mode</h3>
+                    <div class="mode-buttons">
+                        <button class="mode-button selected" data-speed="200">
+                            <span>Classic</span>
+                            <small>Steady Pace</small>
+                        </button>
+                        <button class="mode-button" data-speed="150">
+                            <span>Fast</span>
+                            <small>Quick Reflexes</small>
+                        </button>
+                        <button class="mode-button" data-speed="100">
+                            <span>Quantum</span>
+                            <small>Extreme Challenge</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="theme-selection">
+                    <h3>Visual Theme</h3>
+                    <div class="theme-buttons">
+                        <button class="theme-button selected" data-theme="classic">
+                            <span>Classic</span>
+                            <small>Retro Vibes</small>
+                        </button>
+                        <button class="theme-button" data-theme="neon">
+                            <span>Neon</span>
+                            <small>Cyberpunk</small>
+                        </button>
+                        <button class="theme-button" data-theme="retro">
+                            <span>Retro</span>
+                            <small>Vintage Look</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="start-game" class="primary-button">
+                Launch Game
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12l14 0"></path>
+                    <path d="M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="game-wrapper">
+        <div class="game-info">
+            <div id="score">Score: <span>0</span></div>
+            <div id="level">Level: <span>1</span></div>
+            <div id="timer">Time: <span>00:00</span></div>
+        </div>
+        <div id="game-container"></div>
+        <div class="controls">
+            <button id="pause-button" class="secondary-button">Pause</button>
+            <button id="reset-button" class="secondary-button">Reset</button>
+        </div>
+    </div> 
+
+    <div id="game-over-screen" class="overlay">
+        <div class="game-over-content">
+            <h1>Game Over</h1>
+            <div class="stats">
+                <p>Final Score: <span id="final-score">0</span></p>
+                <p>High Score: <span id="high-score">0</span></p>
+                <p>Time Played: <span id="time-played">00:00</span></p>
+                <p>Level Reached: <span id="final-level">1</span></p>
+            </div>
+            <div class="achievement" id="achievement-display"></div>
+            <div class="game-over-actions">
+                <button id="restart-game" class="primary-button">
+                    Play Again
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 4v6h-6"></path>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                </button>
+                <button id="back-to-menu" class="secondary-button">Main Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pause-screen" class="overlay">
+        <div class="pause-content">
+            <h2>Game Paused</h2>
+            <p>Press SPACE or click Resume to continue</p>
+            <button id="resume-game" class="primary-button">
+                Resume
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
